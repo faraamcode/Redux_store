@@ -1,20 +1,20 @@
-import React from "react";
+import React from 'react'
 // components
-import Navbar from "./components/Navbar";
-import CartContainer from "./components/CartContainer";
+import Navbar from './components/Navbar'
+import CartContainer from './components/CartContainer'
 // items
-import cartItems from "./cart-items";
+import { useSelector } from 'react-redux'
 // redux stuff
-
-function App() {
+function App () {
   // cart setup
+  const data = useSelector(state => state.cart)
 
   return (
     <main>
       <Navbar />
-      <CartContainer cart={cartItems} />
+      <CartContainer cart={data} />
     </main>
-  );
+  )
 }
 
-export default App;
+export default App
